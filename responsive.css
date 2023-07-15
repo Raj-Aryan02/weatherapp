@@ -1,0 +1,24 @@
+@media (max-width:365px) {
+   html{
+    font-size: 55%;
+   }
+
+   
+    .temp {
+        font-size: 24px;
+    }
+
+    .display .desciption{
+        font-size: 24px;
+    }
+
+    .flex .humidity{
+        width: 112px;
+      
+    }
+
+    .flex .wind{
+        width: 112px;
+     
+        }
+}
