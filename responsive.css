@@ -10,6 +10,8 @@
 
     .display .desciption{
         font-size: 24px;
+       margin-bottom: 5px;
+       margin-top:5px;
     }
 
     .flex .humidity{
