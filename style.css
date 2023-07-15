@@ -102,8 +102,7 @@ input.search-bar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 15px;
     font-weight: 600;
     font-size: 30px;
 }
