@@ -26,7 +26,7 @@ let weather = {
 
 
 
-        document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        // document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
         // document.querySelector(".icon").src = "img/" + icon + ".svg"
         document.querySelector(".description").innerText = description;
@@ -36,6 +36,22 @@ let weather = {
         document.querySelector(".weather").classList.remove("loading")
         document.body.style.backgroundImage = "url('http://source.unsplash.com/1600x900/?" + name + "')"
 
+ let iconUrl;
+        if (description.includes("clear")) {
+            iconUrl = "http://openweathermap.org/img/wn/01d.png"; // Clear sky
+        } else if (description.includes("clouds")) {
+            iconUrl = "http://openweathermap.org/img/wn/02d.png"; // Cloudy
+        } else if (description.includes("rain")) {
+            iconUrl = "http://openweathermap.org/img/wn/10d.png"; // Rain
+        } else if (description.includes("snow")) {
+            iconUrl = "http://openweathermap.org/img/wn/13d.png"; // Snow
+        }else if (description.includes("haze")) {
+            iconUrl = "img/haze.svg"; //haze
+        }
+        else {
+            iconUrl = "http://openweathermap.org/img/wn/01d.png"; // Default icon
+        }
+        
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
