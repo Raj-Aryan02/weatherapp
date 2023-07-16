@@ -7,7 +7,13 @@ let weather = {
             + "&units=metric&appid="
             + this.apiKey
         )
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    alert("Enter valid location");
+                    throw new Error("Enter valid location");
+                }
+                return response.json();
+            })
             .then((data) => this.displayWeather(data));
     },
     displayWeather: function (data) {
@@ -20,7 +26,7 @@ let weather = {
 
 
 
-        document.querySelector(".icon").src ="http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
         // document.querySelector(".icon").src = "img/" + icon + ".svg"
         document.querySelector(".description").innerText = description;
